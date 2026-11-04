@@ -24,7 +24,14 @@ function toPS1(root) {
 export async function loadModels(base = './models/') {
   const ids = ['oliver', 'claire', 'elliot', 'recolector', 'palimpsest'];
   const out = {};
-  await Promise.all(ids.map(async (id) => { out[id] = await loader.loadAsync(base + id + '.glb'); }));
+  // .glb directo; si el hosting no sirve binarios .glb, se usa la copia base64 en <id>.glb.json
+  const load = async (id) => {
+    try { const r = await fetch(base + id + '.glb'); if (r.ok) return await loader.parseAsync(await r.arrayBuffer(), base); } catch { /* sigue */ }
+    const j = await (await fetch(base + id + '.glb.json')).json();
+    const bin = Uint8Array.from(atob(j.glb), (c) => c.charCodeAt(0));
+    return loader.parseAsync(bin.buffer, base);
+  };
+  await Promise.all(ids.map(async (id) => { out[id] = await load(id); }));
   return out;
 }
 
