@@ -90,6 +90,13 @@ export class Audio {
   crack() { this.noise(0.5, { freq: 4000, q: 0.7, vol: 0.5 }); this.tone(120, 0.3, { type: 'square', vol: 0.2, glide: 40 }); }
   alarm(times = 4) { for (let i = 0; i < times; i++) { this.tone(880, 0.35, { type: 'sawtooth', vol: 0.05, when: i * 0.8, glide: 440 }); } }
   sting() { this.tone(NOTE(37), 1.6, { type: 'sawtooth', vol: 0.12, glide: NOTE(36) }); this.noise(1.2, { freq: 180, vol: 0.2, attack: 0.02 }); }
+  /** "clac" de las tres patas del Recolector (volumen por distancia). */
+  clack(dist = 5) { const v = Math.max(0.02, 0.35 - dist * 0.015); this.tone(260, 0.05, { type: 'square', vol: v * 0.5, glide: 120 }); this.noise(0.05, { freq: 1800, q: 4, vol: v }); }
+  /** chillido de Palimpsest al verte: jingle roto + metal. */
+  screech() { this.tone(1400, 0.5, { type: 'sawtooth', vol: 0.08, glide: 380 }); this.tone(1480, 0.5, { type: 'square', vol: 0.05, glide: 300 }); this.noise(0.4, { freq: 5000, q: 2, vol: 0.2 }); }
+  /** garras sobre metal (techo/ducto). */
+  scrape() { this.noise(0.25, { freq: 3200 + Math.random() * 1500, q: 8, vol: 0.06 }); }
+  spark() { this.noise(0.25, { freq: 6000, q: 1, vol: 0.35 }); this.tone(90, 0.2, { type: 'square', vol: 0.15, glide: 40 }); }
   creak() { this.tone(140, 0.7, { type: 'sawtooth', vol: 0.04, glide: 95 }); }
 
   /** Ambientes en bucle: 'day' | 'night' | 'purge' | 'none'. */

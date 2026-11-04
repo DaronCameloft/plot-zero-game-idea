@@ -60,6 +60,8 @@ La demo de `/demo` implementa los momentos clave de cada día para que el equipo
 
 ---
 
+> **Actualización v0.2:** tras la revisión de dirección, la historia canónica (doc 00) incorpora además: el Recolector como **criatura de tres patas** hecha de los tres pasantes del ciclo anterior y **guardián de las zonas prohibidas**; **Palimpsest en Forma de Cosecha** (cuatro patas, cara de animatrónico) como clímax de persecución por **pasillos, techos, ductos y casilleros**; una base de 14 zonas, 14 tareas y la fase de **Tarde** dedicada a las incursiones. Estos cambios **refuerzan** la sección 4 (monstruo con regla clara, mascota icónica y momento grabable) y dan dos reglas opuestas fáciles de explicar en un clip: *"que no te oiga"* frente a *"que no te vea"*.
+
 ## 3. Huecos de trama y cómo cerrarlos
 
 Cada hueco tiene su **problema**, su **riesgo** (qué pasa si no se arregla) y una **propuesta** con impacto en diseño. Están ordenados por gravedad.

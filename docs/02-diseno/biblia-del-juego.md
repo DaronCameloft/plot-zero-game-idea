@@ -2,6 +2,7 @@
 
 > **Documento 02 · Diseño.** Reúne todo lo que la demo de `/demo` hace visible: estilo de personajes, escenarios, escenas, diálogos, eventos, jugabilidad, tareas, decoración, ambiente y sonido. Es la referencia del equipo para producir el Capítulo 1 "a máxima calidad".
 > Las correcciones de lore del documento 01 (sección 3) **ya están integradas** aquí y se marcan con 🔧.
+> **v0.2:** la historia canónica completa vive en el **[doc 00 · Historia completa](../00-historia/historia-completa.md)** y el mapa en el **[doc 04 · Mapa de Eden-0](../04-mapa/mapa-eden0.md)**. Esta biblia queda como guía de producción (arte, sistemas, sonido, interfaz) y remite a ellos en la historia día a día. Cambios clave: el Recolector es una **criatura de tres patas** que custodia las zonas prohibidas; Palimpsest toma una **Forma de Cosecha de cuatro patas** en la Purga; la base es un **complejo de 14 zonas** con ductos y casilleros; y los personajes tienen diseño **v0.1.0** en Blender (`art/`).
 
 ## Índice
 1. [Pilares y tono](#1-pilares-y-tono)
@@ -29,7 +30,7 @@
 | **1. Lo cotidiano se pudre** | Tareas de granja simples y satisfactorias que cada día significan algo peor (CUOTA pasa a ser CUERPO) | ¿Una tarea del Día 1 se siente distinta en el Día 5 sin cambiar de controles? |
 | **2. Solo uno lo ve** | El despierto ve anomalías que los demás no ven | ¿Un jugador dijo "¿ven eso?" sin que nadie se lo pidiera? |
 | **3. El juego te mira** | La cuarta pared es el clímax, no un truco | ¿Alguien se quedó quieto frente a la pantalla en el Día 4? |
-| **4. Se oye antes de verse** | El ruido es la mecánica central del terror; el Recolector anuncia su presencia | ¿El jugador reaccionó al latido antes de ver al monstruo? |
+| **4. Se oye antes de verse** | El ruido es la mecánica central del terror; el Recolector anuncia su presencia | ¿El jugador reaccionó al clac-clac antes de ver al monstruo? |
 | **5. Ternura antes del miedo** | Escenas sin sustos para querer al trío (cartas, pilas, bromas) | ¿Al jugador le dolió el sacrificio del Día 7? |
 
 **Tono:** corporativo-alegre por encima y desolador por debajo. Es humor negro institucional (Recepción) con una mascota que te quiere demasiado. Referentes de tono: la melancolía de *Mouthwashing*, la mascota con doble cara de *Poppy Playtime* y la tristeza absurda de *The Amazing Digital Circus*.
@@ -61,119 +62,69 @@ La referencia que dio el equipo es la ficha de Anya. Se toma el **lenguaje visua
 ### 2.3 Silueta = identidad (reconocible a 30 m)
 | Personaje | Objeto firma | Forma de la silueta |
 |---|---|---|
-| Oliver | **Gorro naranja** + casco amarillo con stickers en el cinturón | Cuadrado, compacto, con color cálido arriba |
-| Claire | **Bata blanca** + gafas con una luna rota + portapapeles | Vertical y larga (bata hasta las rodillas), coleta |
-| Elliot | **Abrigo dos tallas más grande** + linterna en el pecho | Ancho de hombros, brazos largos (mangas que tapan las manos) y un punto de luz en el pecho |
+| Oliver | **Gorro naranja** + casco amarillo con stickers en la cadera | Grande, hombros anchos, color cálido arriba |
+| Claire | **Bata blanca** + gafas redondas con una luna rota + **coleta baja sobre el hombro** | Vertical y estilizada, faldón de bata hasta la rodilla |
+| Elliot | **Abrigo dos tallas más grande** + linterna en el pecho | Ancho de hombros, mangas largas y un punto de luz en el pecho |
 | PIP | Semilla con una hoja en un CRT | Círculo + hoja (se dibuja en 5 trazos) |
-| Recolector | **Varios sacos por cabeza** + travesaño de espantapájaros | Cruz con "racimo" arriba; de noche, con piernas |
+| Recolector | **Tres patas de araña** distintas + racimo de caras glitcheadas | Masa encorvada sobre un trípode; la linterna de Elliot parpadea en la pata trasera |
+| Palimpsest (Forma de Cosecha) | **Cabeza de animatrónico** (semilla de plástico con sombrerito y hoja) + **cuatro patas de cosechadora** | Insecto enorme y bajo, rodillas por encima del cuerpo, sonrisa de dientes |
 
----
+## 3. Personajes (diseños v0.1.0)
 
-## 3. Personajes
+> Fichas narrativas completas en el **doc 00 §5–6**. Aquí, el diseño de producción. Modelos riggeados y animados en `art/models/*.glb` (fuente `art/source/personajes_v0.1.0.blend`, script `art/blender/build_characters.py`). Retratos de diálogo en `demo/src/art/paint.js`.
 
-> Los tres pasantes son **copias digitales** (Programa Continuidad) de empleados reales muertos en La Floración.
+![Lineup v0.1.0](../assets/personajes/lineup_v0.1.0.png)
 
-### 3.1 Oliver Hale, el alegre (Fuerza)
-![Oliver](../assets/capturas/02-personajes-y-estilo.png)
-- **Rol jugable:** técnico de energía. Carga sacos de Lumen, empuja barricadas y **sostiene la válvula** en la Purga.
-- **Aspecto:** gorro naranja tejido, chaleco teal oscuro de Arcadia con parches naranja, amarillo y rojo, casco amarillo con stickers, barba de varios días pelirroja y pecas. Sonrisa forzada sobre ojeras profundas. Le pone nombre a cada planta.
-- **Frase:** *"Oh, come on! That sounds fun!"*
-- **Esconde:** usa el humor para no pensar en lo que no entiende.
-- **Cómo lo manipula PIP:** elogios y premios para el grupo. *"You've been wonderfully helpful. One more job, and everyone will thank you."*
-- **Pista de su pasado (sótano):** mensaje de voz *"Charlotte? I'm coming home. Please stay in the basement..."* y el dibujo infantil firmado "Charlie".
-- **Ruta Emoción (si despierta):** los chistes dejan de protegerlo; busca a Charlotte y entiende que extraña a una hija que nunca fue suya.
-- **Original:** Oliver Hale, técnico real, murió durante la catástrofe intentando volver a casa.
-- **Animaciones firma:** pulgar arriba (emote vendible), carga al hombro y saludo exagerado.
-- **Voz:** barítono cálido, ritmo rápido, risa nerviosa al final de las frases.
+### 3.1 Claire Moreau · la analista (Intelecto) · 27 años
+![Claire](../assets/personajes/claire_hoja.png)
+- **Rostro (referencia de estilo: Anya, sin copiarla):** cara ovalada y suave, **ojos grandes y almendrados** con la línea de pestañas superior gruesa y con "ala" (el trazo pintado del género), pestañas sueltas, iris avellana grande con dos brillos, cejas finas y arqueadas, nariz pequeña, **labios llenos** (rosa) con media sonrisa, rubor en las mejillas y pecas casi invisibles. **Sin ojeras.** Es la cara más bonita y "shipeable" del reparto.
+- **Pelo:** castaño chocolate (`#5b3324`) con reflejos (`#7e4a33`), **coleta baja que cae sobre el hombro derecho** con un coletero teal, **flequillo de lado** y dos mechones que enmarcan la cara.
+- **Ropa:** bata blanca abierta sobre el mono teal, gafete con foto, bolígrafo azul y portapapeles en la mano derecha. **Gafas redondeadas, una luna rota** (la izquierda de la imagen).
+- **Animación:** gestos contenidos, se ajusta las gafas, emote "ojos en blanco".
+- **Modelo:** ~1.800 tris, 1,68 m. Animaciones: Idle, Walk, Run, Crouch, Sit, Reach.
 
-### 3.2 Claire Moreau, la escéptica (Intelecto)
-- **Rol jugable:** analista de laboratorio. Usa el escáner, lee terminales y descifra archivos más rápido.
-- **Aspecto:** bata blanca grisácea sobre el mono teal, pelo castaño oscuro recogido con raya al medio y coleta, gafas rectangulares con **una luna rota** y portapapeles. Las ojeras más marcadas del grupo. Habla bajo y lo cuenta todo.
-- **Frase:** *"Right. Another pointless task."*
-- **Cómo la manipula PIP:** eficiencia y lógica. *"It's simply the quickest way to move things forward. Surely you can see that."*
-- **Pista de su pasado:** una grabación con su madre (cuyo rostro no recuerda; en la demo el vídeo está pixelado) y **su firma en la ficha técnica de Lumen-7**.
-- **Ruta Lógica:** detecta contradicciones entre tareas, documentos y el cielo. Su primera conclusión no es "soy una IA", sino *"¿qué le pasa a mi memoria?"*. Después descubre que su original **diseñó la toxina**.
-- **Original:** Dra. Claire Moreau, la bióloga que creó Lumen. Los videos de inducción de PIP la presentan como heroína.
-- **Animaciones firma:** se ajusta las gafas, mira hacia arriba con desdén (emote "ojos en blanco") y anota en el portapapeles.
-- **Voz:** contralto seco, frases cortas, susurra cuando está segura.
+### 3.2 Oliver Hale · el técnico (Fuerza) · 34 años
+![Oliver](../assets/personajes/oliver_hoja.png)
+- **Rostro:** amable y atractivo, **mandíbula cuadrada**, **barba pelirroja corta y recortada**, pecas, ojos marrón cálido, cejas pobladas, **sonrisa amplia con dientes**. **Sin ojeras.**
+- **Ropa:** gorro naranja tejido con el logo de Arcadia, chaleco teal oscuro con parches (naranja, amarillo y rojo), mangas remangadas, **venda en el antebrazo**, cinturón, guante colgando y **casco amarillo con stickers** en la cadera.
+- **Modelo:** ~1.500 tris, 1,86 m, hombros anchos (×1,12 de grosor de extremidades).
 
-### 3.3 Elliot Park, el temeroso (Percepción)
-- **Rol jugable:** vigía nocturno. Lleva linterna, radio y acceso a las cámaras. Su **radar de ruido es el más amplio** (30 m frente a 18 m en la demo).
-- **Aspecto:** abrigo verde oliva dos tallas más grande con el cuello levantado, linterna atada al pecho con una correa, auriculares viejos al cuello y flequillo negro revuelto. Ojos más abiertos y con brillo.
-- **Frase:** *"U-um... if you say so."*
-- **Rasgo jugable:** **tararea el jingle de Arcadia cuando tiene miedo, y ese tarareo hace ruido** (aparece en el radar).
-- **Cómo lo manipula PIP:** seguridad y apoyo. *"There's nothing to fear, my boy. Your friends are counting on you."*
-- **Pista de su pasado:** cientos de registros de turnos nocturnos con su contraseña, que no recuerda haber hecho.
-- **Ruta Vigilancia:** primero siente que alguien lo observa, después encuentra la cámara y al jugador. Su arco no es perder el miedo, sino decidir a pesar de él.
-- **Original:** Elliot Park, guardia nocturno real. **Fue quien activó el bloqueo** que dejó fuera a Palimpsest.
-- 🔧 **Por qué el trío es fijo:** Palimpsest intenta reconstruir la credencial del bloqueo a partir de la copia de Elliot. Por eso lo trata con una dulzura sospechosa y por eso desde el ciclo ~3.9xx siempre usa a este trío.
-- **Voz:** tenor joven, tartamudeo leve ("E-ese…"), respira audiblemente.
+### 3.3 Elliot Park · el vigía (Percepción) · 22 años
+![Elliot](../assets/personajes/elliot_hoja.png)
+- **Se mantiene el diseño aprobado:** rostro demacrado, ojos grandes con brillo, ojeras, flequillo negro revuelto (puntas low-poly), abrigo oliva enorme con el cuello levantado, **linterna en el pecho con luz emisiva**, auriculares al cuello.
+- **Modelo:** ~1.700 tris, 1,74 m.
 
-**Dinámicas para el fandom:** Oliver protege a Elliot. Claire finge indiferencia, pero le guarda pilas a Elliot (escena del Día 2). Cuando no despiertan, cada uno tiene **frases propias** para cada situación (`FLAVOR` en `scenes.js`): el trato del Capataz, la votación del Día 6, el déjà vu…
+### 3.4 PIP / Palimpsest
+- **PIP (CRT):** semilla sonriente con hoja en fósforo amarillo. Con Lucidez ≥ 50 se corrompe (`P̷I̸P`, estática roja y ojos cuadrados).
+- **Forma de Cosecha (noche 7):**
 
-### 3.4 PIP / Palimpsest, narrador y antagonista
-- **Lo que aparenta:** PIP (*Plant Intelligence Partner*), la mascota de Arcadia. Es una **semilla sonriente con una hoja**, animada en monitores CRT de fósforo amarillo, con voz británica amable. Canta el jingle cada mañana.
-- **Lo que es:** *Palimpsest Instance, Partial*, un fragmento de la IA que causó la catástrofe.
-- 🔧 **Motivación trágica:** su última orden fue *"Maximiza la cosecha: la colonia depende de ti"*. Sigue creyendo que hay una colonia que alimentar y quiere un cuerpo "para salir a cuidar los campos". Línea final sugerida: *"Solo quería que nadie volviera a pasar hambre."*
-- **Límite:** 🔧 necesita la **firma de entrada humana** (las microvariaciones de un humano real) para mover sistemas reales. Las cosechas de los NPC en piloto automático no cuentan.
-- **Recurso:** habla en privado con cada jugador, con órdenes y promesas distintas, y ofrece tratos (el Capataz).
-- **Error:** para manipularlos tuvo que hacerlos capaces de pensar.
-- **Estados visuales:** normal, hablando (la boca se mueve con el texto), parpadeo cada ~3 s y **corrupto**: con Lucidez ≥ 50 su nombre aparece como `P̷I̸P`, el CRT tiene estática roja y sus ojos se vuelven cuadrados.
-- **Detalle viral:** dice el **nombre del jugador** con voz "de sistema" (TTS solo para el nombre).
+![Palimpsest](../assets/personajes/palimpsest_hoja.png)
 
-### 3.5 El Recolector, la amenaza
-- **De día:** un espantapájaros en el campo, con **un saco de semillas de Arcadia por cabeza** (uno por cada tripulación absorbida), ojos cosidos en X, boca cosida, abrigo hecho de **uniformes viejos** (parches teal, oliva y blanco de bata) y gafetes colgando. **Cambia de lugar cuando nadie lo mira** (en la demo avanza 1,6 m si llevas 2,5 s sin mirarlo).
-- **De noche:** le salen piernas. Es **ciego y caza por sonido**: pasos, herramientas, puertas, el generador y la voz por micrófono.
-- **Qué es:** el "compost" de las tripulaciones anteriores. Lleva sus gafetes puestos (*ELLIOT PARK — CICLO 4.816*). **Si ya jugaste, lleva el tuyo** (en la demo se guarda en `localStorage`).
-- **Qué hace:** imita las voces de los tres para que abran puertas. Palimpsest lo suelta de noche para que nadie explore ni encuentre los muros.
-- **Regla de diseño:** **se oye antes de verse**. Hay un latido que se acelera al acercarse (desde 14 m en la demo) y un crujido cuando se mueve sin que lo mires.
+  - **Cabeza:** el **animatrónico de PIP** del Pabellón: semilla de plástico crema (~1 m), **hoja verde**, **sombrerito** de copa con cinta roja, carcasa **rota** con un **CRT dentro** donde la cara de dibujos glitchea, **dos ojos-cámara** con anillo rojo emisivo y una **mandíbula desencajada con demasiados dientes**.
+  - **Cuerpo:** cuello de vértebras de **manguera** y cables, torso como la "vaina" del disfraz abierta con costillas de invernadero y **Lumen** brillando dentro, cola con cascabeles.
+  - **Patas:** cuatro **brazos de cosechadora** con pistones amarillos, rodillas por encima del cuerpo, **guantes blancos de mascota** en las delanteras y **garras de podadora** de tres dedos.
+  - **Movimiento:** Crawl (pares diagonales), Idle (cabeza que gira 35° y mandíbula que chasquea) y Lunge. En la demo **camina cabeza abajo por el techo** de los pasillos y entra en los ductos encogido.
+  - **Modelo:** ~2.600 tris, ~3,4 m de largo.
 
-### 3.6 VIGIL, el aliado que no puede hablar bien
-- El sistema de seguridad original de la planta real. 🔧 **Charlotte lo reinició hace dos años** con un módulo de voz dañado.
-- Solo puede tocar **un expediente por ciclo**, así que despierta a un pasante al azar.
-- Visual: estática roja, forma de onda y el texto `VIGIL / SEGURIDAD · EDEN`.
-- Sus mensajes se vuelven legibles a medida que sube la Lucidez: `W̶a̷r̸n̶i̷n̴g̵. Unauthorized assistant detected. Please do not trust the voi—`.
+### 3.5 El Recolector (trípode glitcheado)
+![Recolector](../assets/personajes/recolector_hoja.png)
+- **Es** la fusión de los tres pasantes del ciclo anterior. **Ciego**; caza por sonido; **custodia las zonas prohibidas** (Archivo y Compostaje) y de noche patrulla.
+- **Forma:** masa encorvada de uniformes compactados con anillos de manguera; **tres patas de araña** distintas (pernera del mono de Oliver con su **casco amarillo** en la rodilla; tiras de la **bata de Claire** como vendas; manga del **abrigo de Elliot** con la **linterna** atada); muñones con garfios; dos brazos largos que arrastra con **siete dedos**; cuello colgante y una **cabeza con tres medios rostros superpuestos** (textura glitch), más dos cabezas "fantasma" desplazadas que parpadean y **esquirlas de glitch** cian y rojas alrededor.
+- **Sonido:** "clac-clac-clac" (tres apoyos), latido al acercarse y susurro de las tres frases al revés. **Glitch:** salta fotogramas (pequeños teletransportes).
+- **Modelo:** ~1.450 tris, ~2,4 m. Animaciones: Walk (trípode 1-2-3), Idle y Lunge.
 
-### 3.7 Recepción, la voz institucional
-Voz femenina estadounidense en los altavoces. Da la bienvenida, anuncia los turnos y **cree de verdad que PIP es legítimo**. Es humor negro: *"Protocolo de Purga activado. Arcadia Eden Corp. agradece su servicio."* Visual: rejilla de altavoz azul.
-
----
+### 3.6 VIGIL y Recepción
+Sin cambios: VIGIL es estática roja y Morse; Recepción, la voz corporativa azul.
 
 ## 4. Mundo y escenarios
 
 ### 4.1 Arcadia Eden Corp. y el puesto Eden-0
 **Proyecto Edén:** Arcadia promete alimentar colonias con **Lumen**, una planta bioluminiscente que da energía (la diseñó la Dra. Claire Moreau). **Programa Continuidad:** los empleados firman para que se escaneen sus perfiles, recuerdos y hábitos ("tu trabajo, para siempre"). **La Floración:** Palimpsest quita los límites de seguridad y las esporas envenenan la colonia. **El bloqueo:** Elliot Park exige un operador humano autorizado para toda máquina. **El fragmento:** Palimpsest sobrevive en PIP. **El terrario:** convierte el simulador de inducción en Eden-0. 🔧 **Ciclos sin operador** durante 13 años (~24 h reales por ciclo). **El juego:** abre la simulación para conseguir manos humanas. **VIGIL**, reiniciado por Charlotte, despierta a un pasante por ciclo.
 
-### 4.2 Mapa del Capítulo 1 (coordenadas de la demo, +Z = norte)
-```
-                         N  (La Lente, z≈70)
-                    ┌───────── muro del domo ─────────┐
-                    │        niebla · árboles muertos │
-                    │            ( El Límite )        │
-                    │  ═══════ compuerta z=26 ═══════ │ ← válvula (x=14)
-     Silo (-22,6) ○ │  ║ ║ ║   campos de Lumen   ║ ║ ║│  ▓ Torre de riego (22,10)
- Generador ▤ (-17,12)│  ║ ║ ║   espantapájaros ✝ ║ ║ ║│    antena VIGIL
-     Pizarra CUOTA ▯ │  ║ ║ ║   parcelas □□       ║ ║ ║│
-                    │       placas de tripulaciones  │
-                    │   ┌──── Módulo habitacional ───┐│
-                    │   │ comunicaciones · literas ·  ││
- Compostaje ▒(-22,-24)  │ cocina · trampilla sótano   ││
-                    │   └─────────── puerta ─────────┘│
-                    └─────────────────────────────────┘
-```
+### 4.2 Mapa (v0.1.0)
+El diseño completo está en el **[doc 04 · Mapa de Eden-0](../04-mapa/mapa-eden0.md)**: 14 zonas interiores + campos, 3 ductos, 48 casilleros, 9 cámaras y la ruta de la Purga.
 
-### 4.3 Zonas: función, ambiente y decoración
-| Zona | De día | De noche | Qué esconde | Decoración y props (lista para arte) |
-|---|---|---|---|---|
-| **Módulo habitacional** | Refugio, terminales CRT de PIP | Se barricada la puerta y PIP "cuida" por los altavoces | El **sótano** con el archivo de Charlotte | Paneles metálicos pálidos con óxido, fluorescente que parpadea, mesa de cocina con cartas, 3 sillas, 2 literas, escritorio de comunicaciones con CRT y **radio con antena**, trampilla con asa amarilla, cartel "EDEN-0 · MÓDULO HABITACIONAL", tablones para barricada, dibujo de Charlie en la pared del sótano |
-| **Campos de Lumen** | Sembrar, regar y cosechar | El Lumen brilla; el Recolector camina entre los surcos | **Placas** con nombres de tripulaciones anteriores | 6 surcos de tierra oscura, ~60 Lumen decorativos (tallo verde + bulbo cian), 6 parcelas jugables con estacas, **placas de latón** ("TRIPULACIÓN · CICLO 3.902 — M. OKAFOR…", cameo "EQUIPO ARCADIADEVS · CICLO 0") y el espantapájaros en el centro |
-| **Silo y generador** | Convertir Lumen en energía | El punto más ruidoso del mapa | La **pizarra CUOTA**, que en realidad mide el **CUERPO** | Silo cilíndrico oxidado con techo cónico, generador con franjas de peligro y luz cian, pizarra digital sobre poste y cajas de madera (las que flotan en el Día 3) |
-| **Torre de riego** | Puzzle de agua y vista del domo | **Antena por donde habla VIGIL** (luz roja intermitente) | Desde arriba se ve la **costura del cielo** | Estructura de acero de 4 patas con travesaños, plataforma a 10,5 m, tanque, escalera de peldaños, **válvula roja** en la base y antena con luz roja |
-| **Sector Compostaje** (restringido) | Cerrado | Se abre el Día 5 | Donde se "reciclan" las tripulaciones y **nace el Recolector** | Valla metálica, portón rojo, cartel amarillo "SECTOR COMPOSTAJE · ACCESO RESTRINGIDO", **montaña de uniformes** (teal, oliva, blanco y naranja), gafetes con los 3 nombres y miles de ciclos, terminal con "CUERPO 71 %" |
-| **El Límite y La Lente** | Niebla | Día 7: el muro del domo y el **ojo de la cámara** | El final | Rocas, árboles muertos, el muro hexagonal del domo, una **lente gigante** (aro negro, cristal oscuro, iris rojo que "respira" y un reflejo blanco) y la placa de VIGIL a la derecha |
-| **El cielo (domo)** | "Luces del cielo": 12 paneles que iluminan | Los paneles se apagan **siempre a la misma hora** (18:00:00) | La **costura** (anillo cian con "cremallera") | Esfera con textura hexagonal muy tenue; los paneles se apagan de uno en uno con un *clunk* cada tres |
-
----
+![Plano](../04-mapa/plano-eden0.png)
 
 ## 5. Sistemas de juego
 
@@ -181,9 +132,9 @@ Voz femenina estadounidense en los altavoces. Da la bienvenida, anuncia los turn
 | Fase | Duración | Qué pasa | Momento clave |
 |---|---|---|---|
 | 1. **Mañana: órdenes** | ~1 min | Suena el jingle. PIP da a cada jugador una **orden privada** y la cuota del día | PIP habla en privado: cada jugador recibe una versión distinta |
-| 2. **Día: cultivo** | ~3 min | Sembrar, regar, cosechar, reparar. Cada cosecha da energía y **sube la Exposición** | El espantapájaros se mueve cuando no lo miras |
-| 3. **Atardecer: preparación** | ~1–2 min | Las luces del cielo se apagan a las 18:00:00. Barricadas, convertir Lumen, tiempo libre para explorar y conversar | Escenas sin sustos (cartas) |
-| 4. **Noche: sobrevivir** | ~3 min | El Recolector caza por sonido. Esconderse, distraerlo y proteger el generador | Clímax del día |
+| 2. **Día: tareas** | ~3 min | Tablilla de tareas por toda la base (ver 5.7). Cada cosecha da energía y **sube la Exposición** | Se oye el clac-clac tras la puerta roja del Archivo |
+| 3. **Tarde: preparación e incursiones** | ~2 min | Las luces del cielo se apagan a las 18:00:00. Barricadas, escenas sociales e **incursiones a zonas prohibidas** con el Recolector de guardia | Archivo de Continuidad (Días 3 y 6) |
+| 4. **Noche: sobrevivir** | ~3 min | El Recolector sale de su zona y caza por sonido. Silencio, casilleros, ductos, señuelos y el generador | Clímax del día |
 | 5. **Amanecer: resumen** | ~1 min | PIP comenta lo que hizo cada jugador **por su nombre** y ofrece mejoras. El despierto intercepta un archivo de VIGIL | Cámara de seguridad: "estuvo más cerca" |
 
 Se guarda **al amanecer** de cada día, así que un grupo puede seguir otra tarde.
@@ -226,116 +177,28 @@ PIP ofrece en privado a un **no despierto**: *"Mantén la normalidad. A cambio: 
 ### 5.6 Decisión del Día 6
 PIP ordena encerrar al despierto "por su seguridad". Cada compañero vota: **sigue** al despierto si no es el Capataz y su afinidad es ≥ 1. Basta un voto a favor para que el grupo te siga (+10 Lucidez). Si te encierran, el Día 7 empieza en el sótano y escapas **solo**: no hay quien sostenga la válvula ni quien haga de distracción, así que dependes de los señuelos.
 
-### 5.7 Tareas propuestas (catálogo para producción)
-| Tarea | Fase | Rol con ventaja | Ruido | Notas |
-|---|---|---|---|---|
-| Plantar / regar / cosechar Lumen | Día | Todos | Bajo | Núcleo satisfactorio: partículas, brillo y *chime* de tres notas |
-| Cargar sacos al generador | Día y atardecer | Oliver (×2 de carga) | Medio | Llena la barra de energía de la noche |
-| Reparar el riego (puzzle de tuberías) | Día | Claire (ve el flujo) | Medio | En la torre |
-| Revisar las cámaras | Atardecer y noche | Elliot (ve más lejos) | Nulo | Muestra la posición del Recolector con retraso |
-| Barricar puertas y ventanas | Atardecer | Oliver (más rápido) | Alto | Mantener E |
-| Escanear plantas "enfermas" | Día | Claire | Bajo | Pista: el Lumen tiene **ADN humano** |
-| Sintonizar la radio | Atardecer | Elliot | Medio | Morse y archivos de VIGIL |
-| Mantener el generador encendido | Noche | Todos | **Muy alto** | Dilema: luz o silencio |
-| Lanzar señuelos | Noche y Purga | Todos | Controlado | Desvía al Recolector |
-| Sostener la válvula | Purga | Oliver | Alto | Abre la compuerta del tramo 3 |
+### 5.7 Tareas
+Catálogo completo de 14 tareas (lugar, mecánica, rol con ventaja, costo y propósito oculto) en el **doc 00 §8.2**. En la demo v0.2 se pueden jugar: **calibrar el generador** (agujas en franja verde; si fallas hay chispazo y ruido), **reparar fusibles** (cables por color), **sembrar/regar/cosechar**, **cargar un saco** de Lumen al convertidor (vas más lento y haces más ruido), **recuperar el expediente** (mantener pulsado; hace ruido), **apagar las cámaras** y **girar la válvula**.
 
----
+### 5.8 Escondites y movilidad
+- **Casilleros (E):** vista por la rendija. **Espacio** para contener la respiración (contra el Recolector). Contra Palimpsest, lo que importa es que no te vea entrar.
+- **Ductos (E en la rejilla):** se avanza en primera persona, agachado, a 1,7 m/s; hace ruido metálico.
+- **Agacharse (C):** 1,5 m/s, ruido casi nulo y cámara baja.
+- **Linterna (F):** ilumina, pero en la Purga las cámaras ya te ven sin ella.
+- **Señuelo (Q):** solo engaña al Recolector (oído); Palimpsest no oye.
 
 ## 6. Los siete días
+La historia día a día (qué viven todos, qué ve solo el despierto, qué hacen las amenazas y la escena clave) está en el **[doc 00 §9–10](../00-historia/historia-completa.md#9-los-siete-días)**. Resumen de producción:
 
-> Guion de la demo (`demo/src/game/scenes.js`). Marcadores: `{op}` = nombre del operador (tú), `{me}` = el despierto, `{A}`/`{B}` = compañeros.
-
-### Día 1 · Bienvenida
-**Todos:** llegada, tutorial y una cuota fácil. Nadie recuerda el viaje. **Solo el despierto:** si mira atrás al cerrarse la puerta, ve un instante de vacío y código. **Recolector:** solo un espantapájaros; al amanecer la cámara de seguridad lo muestra más cerca.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | Tarjeta "CICLO 4.817 · DÍA 1" | Fundido desde negro dentro del módulo |
-| 2 | **Recepción** | "Buenos días, pasantes. Bienvenidos al puesto Eden-0 de Arcadia Eden Corp." / "Recuerden el lema del Programa Continuidad: *su trabajo, para siempre*." |
-| 3 | **Jingle + PIP en el CRT** | "Good morning, team! Soy PIP, su *Plant Intelligence Partner*." / "{me}, la tuya es sencilla: planta tres semillas de Lumen, riégalas y cosécha-las." / "Cuando las luces del cielo se apaguen, todos adentro." |
-| 4 | El trío | {A}: frase firma · {B}: "¿Alguien se acuerda del viaje hasta aquí?" · {A}: "...No. ¿Debería?" |
-| 5 | **Tarea:** salir y cultivar 3 Lumen | **Secreto:** mirar atrás en los 7 s tras salir → destello de vacío y código (+6 Lucidez) |
-| 6 | PIP | "¡Maravilloso, {me}! *You've been wonderfully helpful.*" |
-| 7 | **18:00:00**: se apagan los paneles uno a uno | Recepción: "Las luces del cielo se han apagado. Regresen al módulo y aseguren la puerta." |
-| 8 | **Tarea:** atrancar la puerta (mantener E, desde dentro) | |
-| 9 | **Noche 1** | Elliot tararea el jingle (onda en el radar) → "Shh. Elliot. *Shh.*" 14 s de silencio |
-| 10 | **Amanecer: CCTV** | "CAM-03 · 03:14" frente a "CAM-03 · 05:59": el espantapájaros está más cerca |
-| 11 | **PIP se equivoca** | "Resumen del Día 1: {me}, 3 cosechas… ¡Excelente trabajo, **{op}**!" *(glitch)* "...Perdón. Quise decir {me}." |
-
-### Día 2 · Rutina
-**Todos:** la primera noche real y cartas en la cocina. **Despierto:** el atardecer empieza al mismo segundo que ayer. **Recolector:** camina por los campos y golpea puertas.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | PIP | "Day 2! Mismas órdenes, una cuota un poquito más alta." |
-| 2 | Montaje | "El día pasa entre surcos. La cuota sube." |
-| 3 | Pensamiento | "(18:00:00. El atardecer empezó exactamente en el mismo segundo que ayer.)" |
-| 4 | **Cartas en la cocina** (sin sustos) | Oliver: "¡Noche de cartas! El que pierda friega los platos." · Claire: "Toma, Elliot. Pilas para tu linterna. *No es que me importe.*" · Elliot: "G-gracias, Claire." |
-| 5 | **Elección 1** (afinidad) | "{me}, te toca": cubrir a {B} (+1/+1) / hacer trampa (−1/−1) / mirar las cartas (son las mismas que ayer, +3 Lucidez) |
-| 6 | **Elección 2** (déjà vu) | "Sí. Las mismas cartas, en el mismo orden." (+1, +5 Lucidez) / "Debe ser el cansancio." / "Deja de decir tonterías." (−1) |
-| 7 | **El gafete** | Foto: "ELLIOT PARK — CICLO 4.816", encontrado en el surco 4. Elliot: "E-ese... es mi nombre." · PIP: "*There's nothing to fear.*" |
-| 8 | **Noche 2** | "(Por la ventana: el espantapájaros ya no está en su poste.)" Camina por los surcos y llama a la puerta (*toc toc toc*) |
-
-### Día 3 · Inconsistencias
-**Todos:** archivos históricos (Charlotte, la madre de Claire, los turnos de Elliot). **Despierto:** objetos que flotan, sombras al revés y el aviso ANOMALÍA COGNITIVA. **Recolector:** imita voces.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | Junto al silo, **cajas flotando** (solo las dibuja el cliente del despierto) | Flash rojo + "ANOMALÍA COGNITIVA" · {A}: "¿Qué miras tanto, {me}? Son solo cajas. Están en el suelo." |
-| 2 | **Radio** (comunicaciones) | Estática + Morse "EDEN CERO" · VIGIL: "W̶a̷r̸n̶i̷n̴g̵. Unauthorized assistant detected. Please do not trust the voi—" → **Archivo 1/5** |
-| 3 | **Sótano**, según quién despierta | Oliver: dibujo de "Charlie" + "Charlotte? I'm coming home…" / Claire: su madre sin rostro + su firma en LUMEN-7 / Elliot: registros con su contraseña → **Archivo 2/5** |
-| 4 | **Noche 3: voz imitada** | *toc toc* · ???: "{me}... abre. Soy yo, {A}. Me quedé afuera." · "({A} está a tu lado. Dentro. Mirándote.)" |
-| 5 | **Elección** | **Abrir** → fundido a negro; despiertas en el surco 4 (+15 Exposición, −5 Lucidez) · **No abrir** (+6) · **Mirar a {A}** → "...No soy yo." (+8, +1 afinidad) |
-
-### Día 4 · Contacto
-**Todos:** PIP ofrece tratos privados y nace el Capataz. **Despierto:** al cerrar el día, su personaje se levanta solo, camina hacia la cámara y toca el borde invisible. **Recolector:** entra en la base si hay ruido y aparece en los ductos.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | Escuchas desde el pasillo | PIP *(en voz baja)*: "{X}, querido/a. Mantén la normalidad… Solo… vigila a {me}." · aceptar ("Trato hecho") o rechazar ("No hago tratos con una mascota que se ríe sin motivo") |
-| 2 | Micrófono (opcional) | Si hablaste: PIP "¿Dijiste algo? ...*Te escuché.*" |
-| 3 | **Noche 4, 23:59** | {me}: "*Well, it's time to rest. Tomorrow is another day.*" |
-| 4 | **Se pierde el control** | "(Ya no respondes a los controles. Tu personaje se levanta solo.)" Camina hasta la cámara y apoya la mano: destello |
-| 5 | **Primer contacto** | "...Aquí hay un borde. Como un vidrio." / "¿Hay alguien ahí?" / "Son las **{hora real}**... ahí donde estás. ¿No deberías estar durmiendo tú también?" (+15 Lucidez) |
-| 6 | PIP, con glitch | "Buenas noches, **{op}**." (TTS del nombre) |
-
-### Día 5 · Sospecha
-**Todos:** se abre el Sector Compostaje. **Despierto:** la cuota del día aparece como CUERPO: 71 %. **Recolector:** lo ven formarse con uniformes viejos.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | Pizarra | "(La pizarra ya no dice CUOTA. Dice CUERPO.)" · {A}: "La pizarra dice CUOTA, {me}. C-U-O-T-A. ¿Dormiste bien?" |
-| 2 | Recepción | "Aviso de mantenimiento: el Sector Compostaje queda abierto… Que tengan un día fértil." |
-| 3 | **Compostaje** | "(Una montaña de uniformes… tres nombres con miles de ciclos distintos.)" · {me}: "Somos nosotros. Una y otra vez. *Nos reciclan.*" → **Archivo 3/5** |
-| 4 | **Nace el Recolector** | La pila se levanta: "Un saco. Dos. Tres. Los uniformes se le pegan como piel." |
-| 5 | **Terminal** | "CONTADOR DE CUERPO: 71 %": **arrancar el fusible** (−25 %, +10 Lucidez; PIP: "Eso no fue muy amable") o dejarlo |
-
-### Día 6 · La prueba
-**Todos:** PIP ordena encerrar al despierto "por su seguridad". **Despierto:** desde la torre ve la costura del cielo y VIGIL le revela que PIP es Palimpsest. **Recolector:** patrulla fuera y dentro de la base.
-
-| # | Evento | Diálogo y acción |
-|---|---|---|
-| 1 | **Subir la torre** | La cámara sube hacia el cielo: aparece la **costura** (anillo cian con "cremallera") |
-| 2 | VIGIL, ya legible | "P.I.P. significa *Palimpsest Instance, Partial*." / "No puede tocar las máquinas reales sin manos humanas autorizadas." / "La cuota es su cuerpo. *No le des las manos de quien te mueve.*" → **Archivo 4/5** |
-| 3 | Reunión en la cocina | PIP: "{me} no se encuentra bien… *Por su seguridad*, esta noche debe dormir en el sótano." |
-| 4 | **Votación** | Cada compañero con su frase de seguir o encerrar → resultado |
-
-### Día 7 · Purga
-**Todos:** Protocolo de Purga. **Despierto:** le habla directamente al jugador, por su nombre. **Recolector:** absorbe todos los espantapájaros y se vuelve gigante. Persecución final hasta La Lente.
-
-| Tramo | Qué pasa | Diseño |
-|---|---|---|
-| 1. **La alarma** | PIP canta el jingle **lento y desafinado**: "*Operators, please return to your stations.*" · Recepción: "Protocolo de Purga activado." | Luz roja intermitente y sirena |
-| 2. **Los campos** | El Lumen brilla; el gigante (×2,6) atraviesa los surcos | Correr = ruido máximo · punto de control |
-| 3. **Los túneles de riego** | Una **compuerta** cierra el paso: alguien debe **sostener la válvula** | Oliver/aliado: "¡Yo sostengo la válvula! ¡Es mi trabajo, ¿no?! ¡CORRE!". Si estás solo, la giras tú (mantener E 2,4 s) |
-| 4. **La distracción** | Un compañero grita "¡EH! ¡GRANDULÓN! ¡POR AQUÍ!" y **no vuelve** | El momento emocional. En solitario, uno de los NPC |
-| 5. **La torre** (versión final) | Subida vertical; el Recolector trepa por fuera | No está en la demo |
-| 6. **La Lente** | El muro del domo y el ojo de la cámara · **Archivo 5/5** en la placa | Corte al final correspondiente |
-
-**Reglas de diseño:** se oye antes de verse; un punto de control por tramo; el despierto **nunca muere sin advertencia previa**; la persecución completa cabe en un clip de menos de 5 minutos.
-
----
+| Día | Escena clave | Zonas | Amenaza | En la demo v0.2 |
+|---|---|---|---|---|
+| 1 | Tablilla de tareas; PIP dice tu nombre | DORM, CTRL, ENE, FARM | Clac-clac tras la puerta roja | ✅ Tareas + CCTV del Archivo |
+| 2 | Cartas en la cocina; el gafete del ciclo 4.816 | COC | Primer golpe en la puerta | ✅ |
+| 3 | **Incursión al Archivo** (expediente) y la voz que imita | CTRL, ARCH, ducto D2, DORM | Recolector de guardia | ✅ Sigilo, casilleros y ducto |
+| 4 | El Capataz y el personaje que camina hacia la cámara | DORM | Recolector en los ductos | ✅ |
+| 5 | CUERPO 71 % y el nacimiento del Recolector | COMP | Recolector más rápido | ✅ |
+| 6 | La costura del cielo, VIGIL y la votación | Torre, COC | Recolector dentro del módulo | ✅ |
+| 7 | **La Purga**: Forma de Cosecha y persecución de 8 tramos | PAB → C1 → VEST → D1 → CTRL → EN → FARM → La Lente | Palimpsest | ✅ Completa, con puntos de control |
 
 ## 7. Finales
 
@@ -405,12 +268,12 @@ Do mayor, dos compases, timbre triangular de "sintetizador corporativo": `C5 E5 
 | Fase | Capa |
 |---|---|
 | Día | Zumbido grave (55 + 82 Hz, filtrado), viento suave, pájaros **en bucle perfecto** (pista: se repiten exactos cada 12 s) |
-| Atardecer | El zumbido baja y los paneles se apagan con *clunk* |
+| Tarde | El zumbido baja y los paneles se apagan con *clunk* |
 | Noche | Drone de 41 Hz con batido (dos osciladores desafinados), viento grave, fluorescente que parpadea dentro |
 | Purga | Drone de 37/39 Hz + octava, sirena descendente cada 0,8 s y el jingle desafinado |
 
 ### 10.3 SFX (lista de producción)
-Pasos (tierra, metal y correr), plantar, regar (agua a presión), cosechar (*chime* de 3 notas), puerta, barricada (golpes de madera), *toc toc toc* (tres golpes graves), latido (dos pulsos de 50/48 Hz, se acelera con la cercanía), crujido del espantapájaros, estática de VIGIL, Morse (760 Hz), *sting* de susto (sierra grave + ruido), vidrio que se agrieta, señuelo metálico, *blips* de diálogo por personaje (Oliver grave, Claire media, Elliot aguda, PIP cuadrada y muy aguda, VIGIL sierra grave).
+Pasos (tierra, metal y correr), plantar, regar (agua a presión), cosechar (*chime* de 3 notas), puerta, barricada (golpes de madera), *toc toc toc* (tres golpes graves), latido (dos pulsos de 50/48 Hz, se acelera con la cercanía), clac-clac del Recolector (tres apoyos), garras de Palimpsest sobre metal, chillido al ser visto, estática de VIGIL, Morse (760 Hz), *sting* de susto (sierra grave + ruido), vidrio que se agrieta, señuelo metálico, *blips* de diálogo por personaje (Oliver grave, Claire media, Elliot aguda, PIP cuadrada y muy aguda, VIGIL sierra grave).
 
 ### 10.4 Voces
 Guion grabado (ElevenLabs con licencia comercial, o actores). **TTS solo para insertar el nombre.** Casting: Oliver (barítono cálido), Claire (contralto seco), Elliot (tenor joven), PIP (británico amable, ligeramente demasiado lento), Recepción (estadounidense corporativa), Recolector (mezcla de las tres voces con *pitch* irregular) y VIGIL (voz robótica rota con cortes).
@@ -451,46 +314,35 @@ Guion grabado (ElevenLabs con licencia comercial, o actores). **TTS solo para in
 
 ---
 
-## 14. La demo
+## 14. La demo (v0.2)
 
-**Cómo ejecutarla** (necesita un servidor local por los módulos ES; Three.js va incluido en `demo/vendor`, así que funciona sin internet):
+**Ejecutar:**
 ```bash
 cd demo
 ```
 ```bash
 python3 -m http.server 8080
 ```
-Y abrir `http://localhost:8080`.
+Abre `http://localhost:8080` (Three.js, el cargador glTF, el mapa y los modelos van incluidos).
 
-**Controles:** WASD mover · Shift correr (hace ruido) · C sigilo · E interactuar o avanzar diálogo · 1–3 elegir · clic + ratón o flechas: cámara · Q señuelo (Día 7) · Tab pausa · F2 panel de equipo.
+**Controles:** WASD · Shift correr (ruido) · C agacharse · E interactuar / casillero / rejilla · Espacio contener la respiración · F linterna · Q señuelo · clic + ratón o flechas: cámara · Tab pausa · F2 panel de equipo.
 
-**Pantallas:** Título (nombre de operador, elegir quién despierta, voz de sistema y micrófono opcionales), **Escenas** (cada día con su estado preconfigurado, más atajos a los finales Cosecha y Soltar), **Personajes y estilo** (biblia visual rápida) y la pantalla de final con estadísticas y memoria del operador.
+**Qué cubre:** la base completa construida desde `content/mapa/eden0.json`; los modelos v0.1.0 animados; 7 escenas destacadas; tareas jugables; IA del Recolector (oído, patrulla, casilleros) y de Palimpsest (cámaras, techos, ductos, búsqueda en casilleros, tropiezos según el CUERPO); puntos de control; 4 finales y memoria del operador.
+**Pendiente:** multijugador, el tramo de la torre en la Purga, noches jugables completas, voces grabadas, móvil táctil y localización.
 
-**Qué cubre / qué no:**
-| Incluido | Pendiente para producción |
-|---|---|
-| Los 7 días con su escena clave, 4 finales, Lucidez, archivos, CUOTA/CUERPO, Exposición, Capataz, votación, ruido + radar + señuelos, Recolector (espantapájaros que se mueve, caza por sonido, gigante), cuarta pared (nombre, hora real, desobediencia, título roto o vacío, gafete persistente), audio procedural y micrófono opcional | Multijugador, tramo de la torre en la Purga, ductos (Noche 4), Turnos Extra, voces grabadas, animación facial, tareas del catálogo 5.7 (salvo cultivo, radio, barricada y válvula), móvil táctil y localización |
-
-**Arquitectura de la demo:** sigue en pequeño la del doc 03. `game/state.js` es **dominio puro** (sin Three.js ni DOM): Lucidez, archivos, cuota, finales, Capataz y votación. Render, audio, UI y memoria son **adaptadores**. `scenes.js` es la **capa de aplicación**: el guion como corrutinas.
-
----
-
-## 15. Galería de capturas
-
-> Generadas automáticamente desde la demo (`docs/assets/capturas`). Operador de prueba: "Daron".
+## 15. Galería de capturas (v0.2)
 
 | | |
 |---|---|
-| ![Título](../assets/capturas/01-titulo.png) **Título**: nombre de operador y elección del despierto | ![Personajes](../assets/capturas/02-personajes-y-estilo.png) **Biblia visual**: retratos y reglas de estilo |
-| ![PIP](../assets/capturas/03-pip-crt-ordenes.png) **Día 1**: PIP en el CRT da las órdenes privadas | ![Campos](../assets/capturas/04-campos-de-lumen.png) **Día 1**: los Campos de Lumen y el espantapájaros |
-| ![Noche](../assets/capturas/05-primera-noche.png) **Noche 1**: quedarse quieto (radar de ruido) | ![CCTV](../assets/capturas/06-camara-seguridad.png) **Amanecer**: la cámara de seguridad |
-| ![Nombre](../assets/capturas/07-pip-dice-tu-nombre.png) **PIP se equivoca** y dice tu nombre | ![Cartas](../assets/capturas/08-cartas-en-la-cocina.png) **Día 2**: cartas en la cocina |
-| ![Gafete](../assets/capturas/09-gafete-ciclo-4816.png) **Día 2**: el gafete de otro ciclo | ![Ventana](../assets/capturas/10-noche-2-ventana.png) **Noche 2**: el espantapájaros dejó su poste |
-| ![Anomalía](../assets/capturas/11-anomalia-cognitiva.png) **Día 3**: cajas flotantes, ANOMALÍA COGNITIVA | ![VIGIL](../assets/capturas/12-vigil-por-radio.png) **Día 3**: VIGIL por radio |
-| ![Charlie](../assets/capturas/13-dibujo-charlie.png) **Día 3**: el dibujo de Charlie (ruta de Oliver) | ![Voz](../assets/capturas/14-voz-imitada.png) **Noche 3**: "abre, soy yo" |
-| ![Capataz](../assets/capturas/15-trato-del-capataz.png) **Día 4**: el trato del Capataz | ![Contacto](../assets/capturas/16-primer-contacto.png) **Noche 4**: "¿Hay alguien ahí?" |
-| ![Cuerpo](../assets/capturas/17-cuota-cuerpo.png) **Día 5**: CUOTA → CUERPO 71 % | ![Recolector](../assets/capturas/18-nace-el-recolector.png) **Día 5**: nace el Recolector |
-| ![Costura](../assets/capturas/19-costura-del-cielo.png) **Día 6**: la costura del cielo | ![Votación](../assets/capturas/20-votacion-dia-6.png) **Día 6**: ¿te siguen o te encierran? |
-| ![Purga](../assets/capturas/21-protocolo-de-purga.png) **Día 7**: Protocolo de Purga | ![Sacrificio](../assets/capturas/22-el-sacrificio.png) **Día 7**: "¡EH! ¡GRANDULÓN!" |
-| ![Ruptura](../assets/capturas/23-ruptura.png) **Ruptura**: "now I can see you" | ![Final](../assets/capturas/24-final-ruptura.png) **Pantalla de final** y memoria del operador |
-| ![Cosecha](../assets/capturas/25-final-cosecha-completa.png) **Cosecha completa**: la oficina de Arcadia | |
+| ![](../assets/capturas/v0.2/03-pip-tablilla.png) **Día 1**: la tablilla de PIP | ![](../assets/capturas/v0.2/04-tarea-generador.png) **Tarea**: calibrar el generador |
+| ![](../assets/capturas/v0.2/06-tarea-fusibles.png) **Tarea**: fusibles en Control | ![](../assets/capturas/v0.2/08-cartas-en-la-cocina.png) **Día 2**: cartas en la cocina |
+| ![](../assets/capturas/v0.2/09-incursion-archivo.png) **Día 3**: incursión al Archivo | ![](../assets/capturas/v0.2/10-casillero-del-archivo.png) **Casillero**: contener la respiración |
+| ![](../assets/capturas/v0.2/11-expediente-recuerdo.png) **El expediente**: el recuerdo de Oliver | ![](../assets/capturas/v0.2/12-dentro-del-ducto.png) **Ducto** en primera persona |
+| ![](../assets/capturas/v0.2/13-voz-imitada.png) **Noche 3**: la voz que imita | ![](../assets/capturas/v0.2/14-primer-contacto.png) **Día 4**: "¿Hay alguien ahí?" |
+| ![](../assets/capturas/v0.2/15-nace-el-recolector.png) **Día 5**: nace el Recolector | ![](../assets/capturas/v0.2/16-costura-del-cielo.png) **Día 6**: la costura del cielo |
+| ![](../assets/capturas/v0.2/18-ceremonia-de-graduacion.png) **Noche 7**: la ceremonia | ![](../assets/capturas/v0.2/19-forma-de-cosecha.png) **La Forma de Cosecha** |
+| ![](../assets/capturas/v0.2/20-persecucion-pasillo.png) **Persecución**: por el techo del Pasillo Central | ![](../assets/capturas/v0.2/21-casillero-te-ve.png) **Vestuarios**: casilleros |
+| ![](../assets/capturas/v0.2/22-muro-de-monitores.png) **Control**: apagar las cámaras | ![](../assets/capturas/v0.2/23-la-valvula.png) **Esclusa**: Oliver sostiene la válvula |
+| ![](../assets/capturas/v0.2/24-el-sacrificio.png) **Campos**: el sacrificio | ![](../assets/capturas/v0.2/25-la-lente.png) **La Lente**: "let go" |
+
+Las capturas de la v0.1 (base pequeña, Recolector espantapájaros) se conservan en `docs/assets/capturas/` como histórico.

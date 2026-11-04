@@ -351,6 +351,8 @@ Ejemplo de vector de prueba (lo ejecutan Luau y C#):
 ```
 **Herramientas (`/tools`, Node + TypeScript):** `validate` (esquemas + referencias rotas + textos sin traducir), `export-luau`, `export-csharp`, `lint-script` (longitud de líneas para TTS, marcadores `{op}` válidos) y un **visor de grafo narrativo** (para revisar las ramas).
 
+**Ya implementado en este repo (v0.1.0):** `content/mapa/eden0.json` es la fuente única del mapa: de ahí salen el plano (`tools/render_map.py`), el blockout de Blender (`art/blender/build_base.py`) y la base de la demo (`demo/src/world/world.js`, con grafo de navegación en `demo/src/game/nav.js`). Los personajes se generan con scripts de Blender reproducibles (`art/blender/build_characters.py`) y se exportan a glTF con animaciones (válidos para Roblox vía FBX/OBJ y para Godot directamente).
+
 **Arte:** Blender como fuente (`/art/source/*.blend`), exportación a FBX (Roblox) y glTF (Godot), rig compatible con **R15**. Texturas en PNG de 128–256 px. **Audio:** sesiones DAW y *stems* en el repo (Git LFS). Voces con licencia comercial documentada.
 
 ---
