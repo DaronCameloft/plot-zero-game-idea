@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plot Zero Demo</title>
+  <meta name="description" content="Demo vertical de PLOT ZERO / Cultivo Cero: los momentos clave del Capítulo 1 en estética PS1.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <canvas id="game" aria-label="Vista del juego"></canvas>
+  <div id="fx-scan" aria-hidden="true"></div>
+  <div id="fx-vignette" aria-hidden="true"></div>
+  <div id="fx-anomaly" aria-hidden="true"></div>
+  <svg id="fx-crack" aria-hidden="true" viewBox="0 0 1000 1000" preserveAspectRatio="none"></svg>
+  <div id="fade" aria-hidden="true"></div>
+  <div id="fx-locker" aria-hidden="true"></div>
+  <div id="breath">CONTÉN LA RESPIRACIÓN [ESPACIO]<i></i></div>
+  <div id="seen" aria-live="polite">TE VE</div>
+  <div id="loading">CARGANDO EDEN-0…</div>
+
+  <div id="hud" class="hidden">
+    <div id="hud-day"></div>
+    <div id="hud-bars">
+      <div class="bar"><span id="quota-label">CUOTA</span><div class="track"><div id="quota-fill"></div></div><b id="quota-val">0%</b></div>
+      <div class="bar exposure"><span>EXPOSICIÓN</span><div class="track"><div id="exp-fill"></div></div></div>
+    </div>
+    <div id="hud-objective"></div>
+    <canvas id="radar" width="150" height="150" title="Radar de ruido"></canvas>
+    <div id="hud-prompt"></div>
+    <div id="hud-help">WASD mover · Shift correr · C agacharse · E interactuar · F linterna · Q señuelo · clic + ratón cámara · Tab menú · F2 panel de equipo</div>
+  </div>
+
+  <div id="card" class="hidden"><h1></h1><p></p></div>
+  <div id="toasts"></div>
+
+  <div id="dialogue" class="hidden">
+    <canvas id="portrait" width="96" height="120"></canvas>
+    <div class="body">
+      <div id="speaker"></div>
+      <div id="line"></div>
+      <div id="choices"></div>
+      <div id="advance">▼</div>
+    </div>
+  </div>
+
+  <div id="cctv" class="hidden"><canvas id="cctv-canvas" width="320" height="200"></canvas><div id="cctv-label"></div></div>
+
+  <div id="screen" class="hidden"></div>
+  <div id="debug" class="hidden"></div>
+
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js", "three/addons/": "./vendor/jsm/" } }</script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
