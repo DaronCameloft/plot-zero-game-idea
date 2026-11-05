@@ -32,6 +32,12 @@ python3 -m http.server 8080
 ```
 Abre `http://localhost:8080`. Controles: WASD · Shift correr · C agacharse · E interactuar / casillero / rejilla · Espacio contener la respiración · F linterna · Q señuelo · ratón o flechas: cámara · Tab pausa · F2 panel de equipo.
 
+## Publicar la demo en Vercel
+El repo incluye `vercel.json`: publica la carpeta `demo/` tal cual, sin paso de build.
+1. En vercel.com → **Add New… → Project** → importa `DaronCameloft/plot-zero-game-idea`.
+2. Deja **Framework Preset: Other** y **Root Directory** en la raíz del repo (`./`); `vercel.json` ya indica `outputDirectory: demo`.
+3. **Deploy**. Para que la URL principal use `develop`, en *Settings → Git → Production Branch* pon `develop` (o fusiona `develop` en `main`).
+
 ## Ramas
 `main` (versiones publicadas) · `develop` (integración; todo el trabajo actual vive aquí) · `feature/*` · `release/*` · `hotfix/*`. Detalles en [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
