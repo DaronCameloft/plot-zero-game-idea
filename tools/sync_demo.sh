@@ -6,3 +6,4 @@ mkdir -p demo/data demo/models
 cp content/mapa/eden0.json demo/data/eden0.json
 cp art/models/*.glb demo/models/
 echo "demo sincronizada: $(ls demo/models | tr '\n' ' ')"
+python3 tools/export_web_models.py

@@ -24,12 +24,18 @@ function toPS1(root) {
 export async function loadModels(base = './models/') {
   const ids = ['oliver', 'claire', 'elliot', 'recolector', 'palimpsest'];
   const out = {};
-  // .glb directo; si el hosting no sirve binarios .glb, se usa la copia base64 en <id>.glb.json
+  // 1) .glb directo · 2) versión web (glTF JSON + bytes + PNG) para hostings que no sirven .glb
   const load = async (id) => {
-    try { const r = await fetch(base + id + '.glb'); if (r.ok) return await loader.parseAsync(await r.arrayBuffer(), base); } catch { /* sigue */ }
-    const j = await (await fetch(base + id + '.glb.json')).json();
-    const bin = Uint8Array.from(atob(j.glb), (c) => c.charCodeAt(0));
-    return loader.parseAsync(bin.buffer, base);
+    try { const r = await fetch(base + id + '.glb'); if (r.ok && (r.headers.get('content-type') || '').indexOf('html') < 0) return await loader.parseAsync(await r.arrayBuffer(), base); } catch { /* sigue */ }
+    const w = await (await fetch(base + 'web/' + id + '.json')).json();
+    // reconstruye un GLB en memoria: JSON (con texturas por URI relativa) + BIN
+    const enc = new TextEncoder(); let js = enc.encode(JSON.stringify(w.gltf)); const jp = (4 - (js.length % 4)) % 4;
+    const bin = Uint8Array.from(w.bin); const bp = (4 - (bin.length % 4)) % 4;
+    const total = 12 + 8 + js.length + jp + 8 + bin.length + bp; const buf = new ArrayBuffer(total); const dv = new DataView(buf); const u8 = new Uint8Array(buf);
+    dv.setUint32(0, 0x46546c67, true); dv.setUint32(4, 2, true); dv.setUint32(8, total, true);
+    dv.setUint32(12, js.length + jp, true); dv.setUint32(16, 0x4e4f534a, true); u8.set(js, 20); u8.fill(0x20, 20 + js.length, 20 + js.length + jp);
+    const o = 20 + js.length + jp; dv.setUint32(o, bin.length + bp, true); dv.setUint32(o + 4, 0x004e4942, true); u8.set(bin, o + 8);
+    return loader.parseAsync(buf, base + 'web/');
   };
   await Promise.all(ids.map(async (id) => { out[id] = await load(id); }));
   return out;
